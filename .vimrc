@@ -35,6 +35,9 @@ Plugin 'tpope/vim-surround'
 "Git plugin
 Plugin 'tpope/vim-fugitive'
 
+"Merginal git plugin
+Plugin 'idanarye/vim-merginal'
+
 "Airline themes
 Plugin 'vim-airline/vim-airline-themes'
 
@@ -48,7 +51,7 @@ Plugin 'xuyuanp/nerdtree-git-plugin'
 Plugin 'ryanoasis/vim-devicons'
 
 "Git tree
-Plugin 'gregsexton/gitv'
+Plugin 'rbong/vim-flog'
 
 "BUffer explorer
 Plugin 'jlanzarotta/bufexplorer'
@@ -101,7 +104,7 @@ let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 
 "Airline theme
-let g:airline_theme = 'lucius'
+let g:airline_theme = 'powerlineish'
 
 "Airline extensions
 let g:airline#extensions#tabline#enabled = 1
@@ -210,5 +213,14 @@ set autoread
 "Diffs in split view
 set diffopt+=vertical
 
-"Clang option
-let g:clang_user_options='|| exit 0'
+"Indent lines
+let g:indentLine_color_term = 239
+let g:indentLine_concealcursor = 'inc'
+let g:indentLine_conceallevel = 2
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+
+"Autoread
+set autoread
+
+"Diffs in split view
+set diffopt+=vertical
