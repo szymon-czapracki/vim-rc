@@ -17,14 +17,14 @@ Plugin 'scrooloose/nerdtree'
 "Rainbow brackets
 Plugin 'eiiches/vim-rainbowbrackets'
 
-"Syntastic
-Plugin 'Syntastic'
+"Ale syntax check
+Plugin 'dense-analysis/ale'
+
+"YouCompleteMe
+Plugin 'ycm-core/YouCompleteMe'
 
 "Tagbar
 Plugin 'majutsushi/tagbar'
-
-"Code completion engine
-Plugin 'Valloric/YouCompleteMe'
 
 "Show git changes in column (+, -, ~)
 Plugin 'airblade/vim-gitgutter'
@@ -34,9 +34,6 @@ Plugin 'tpope/vim-surround'
 
 "Git plugin
 Plugin 'tpope/vim-fugitive'
-
-"Merginal git plugin
-Plugin 'idanarye/vim-merginal'
 
 "Airline themes
 Plugin 'vim-airline/vim-airline-themes'
@@ -51,7 +48,7 @@ Plugin 'xuyuanp/nerdtree-git-plugin'
 Plugin 'ryanoasis/vim-devicons'
 
 "Git tree
-Plugin 'rbong/vim-flog'
+Plugin 'gregsexton/gitv'
 
 "BUffer explorer
 Plugin 'jlanzarotta/bufexplorer'
@@ -59,17 +56,23 @@ Plugin 'jlanzarotta/bufexplorer'
 "Fuzzy finder
 Plugin 'junegunn/fzf.vim'
 
-"Gruvbox theme
-Plugin 'morhetz/gruvbox'
-
 "Indent lines
 Plugin 'Yggdroot/indentLine'
 
-"Colorschemes
-Plugin 'flazz/vim-colorschemes'
-
 "NERD Commenter
 Plugin 'preservim/nerdcommenter'
+
+"Colorschemes
+Plugin 'fcpg/vim-fahrenheit'
+
+"Detect indentation
+Plugin 'tpope/vim-sleuth'
+
+"Clang format
+Plugin 'rhysd/vim-clang-format'
+
+"Colorschemes
+Plugin 'rafi/awesome-vim-colorschemes'
 
 call vundle#end()
 filetype plugin indent on
@@ -104,7 +107,7 @@ let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 
 "Airline theme
-let g:airline_theme = 'powerlineish'
+let g:airline_theme = 'biogoo'
 
 "Airline extensions
 let g:airline#extensions#tabline#enabled = 1
@@ -120,13 +123,12 @@ imap <F12> <Esc><F12>
 nmap <F12> :NERDTreeToggle<CR>
 
 set t_Co=256
-colorscheme gruvbox
-set background=dark
+colorscheme tender
 
 "Display options
 set cursorline " highlight current line
 set noshowmode " do not show mode because airline shows it
-highlight ColorColumn ctermbg=Darkgray
+highlight ColorColumn ctermbg=DarkGray
 set colorcolumn=80 " color the 80-th column
 set cmdheight=1 " height of command bar
 set number " turn on line numbers
@@ -140,7 +142,7 @@ set matchtime=2 " How many tenths of a second to blink
 set list
 set listchars="" " Reset the listchars
 set listchars=tab:>- " make tabs visible
-set listchars+=trail:x " show trailing spaces as xses
+set listchars+=trail:· "Show trailing spaces as dots
 "The character to show in the last column when wrap is off and the line
 " continues beyond the right of the screen
 set listchars+=extends:>
@@ -158,22 +160,14 @@ set ruler
 set history=1000
 
 "Text formatting
-set tabstop=4
+set tabstop=8
 set backspace=indent,eol,start " Delete everything with backspace
-set shiftwidth=4 " Tabs under smart indent
-set autoindent
-set expandtab
-set smartindent
 
 "NerdTree width
-let g:NERDTreeWinSize=45
+let g:NERDTreeWinSize=40
 
 "Taglist width
-let g:tagbar_width=30
-
-"Syntastic
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
-nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
+let g:tagbar_width=40
 
 "Set mouse support
 set mouse=a
@@ -197,21 +191,6 @@ set guifont=3270Medium\ Nerd\ Font\ Bold\ 11
 "Spellcheck
 nmap <F7> :set spell spelllang=en_us<CR>
 nmap <F8> :set nospell<CR>
-
-"Silver Searcher
-let g:ackprg = 'ag --vimgrep'
-
-"Indent lines
-let g:indentLine_color_term = 239
-let g:indentLine_concealcursor = 'inc'
-let g:indentLine_conceallevel = 2
-let g:indentLine_char_list = ['|', '¦', '┆', '┊']
-
-"Autoread
-set autoread
-
-"Diffs in split view
-set diffopt+=vertical
 
 "Indent lines
 let g:indentLine_color_term = 239
